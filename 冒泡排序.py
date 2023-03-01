@@ -1,3 +1,17 @@
+# 递归完成冒泡排序
+def bubble_sort_2(array, n):
+    if n == 1:
+        return array
+    if len(array) == 0:
+        return array
+    #  逐渐减小n，每次把最大的放在最后面，直到n为1
+    for i in range(0, n - 1):
+        if array[i] > array[i + 1]:
+            array[i], array[i + 1] = array[i + 1], array[i]
+    bubble_sort_2(array, n - 1)  # 递归调用
+    return array
+
+
 # 冒泡排序
 def bubble_sort(array):
     for i in range(1, len(array)):
@@ -22,5 +36,6 @@ def bubble_sort_1(array):
 
 
 buf = [3, 5, 6, 1, 0, -1]
+print(bubble_sort_2(buf, len(buf)))
 print(bubble_sort(buf))
 print(bubble_sort_1(buf))
