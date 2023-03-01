@@ -11,7 +11,6 @@ def bubble_sort_2(array, n):
     bubble_sort_2(array, n - 1)  # 递归调用
     return array
 
-
 # 冒泡排序
 def bubble_sort(array):
     for i in range(1, len(array)):
